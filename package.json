@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "lt:android": "wdio config/wdio.lt.android.dev.conf.js",
-    "android": "wdio config/wdio.android.conf.js",
+    "lt:android": "wdio configs/wdio.lt.android.dev.conf.js",
+    "android": "wdio configs/wdio.android.conf.js",
     "appium": "appium --allow-insecure chromedriver_autodownload",
     "pretty-quick": "pretty-quick"
   },

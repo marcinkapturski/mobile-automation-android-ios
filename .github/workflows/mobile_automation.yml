@@ -1,4 +1,4 @@
-name: Store Alerting Mobile Automation
+name: Native App Mobile Automation
 
 on:
   workflow_dispatch:
@@ -30,9 +30,29 @@ on:
 
 jobs:
   run-specs:
-    name: Run
-    if: always()
-    uses: "./.github/workflows/appium-run-tests.yml"
-    secrets:
+    name: Build packages & run tests
+    runs-on: ubuntu-latest
+    env:
+      DEFAULT_DEVICE: android
+      DEFAULT_TYPE: regression
       LAMBDATEST_USER: ${{ secrets.LAMBDATEST_USER }}
       LAMBDATEST_KEY: ${{ secrets.LAMBDATEST_KEY }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ">=16.0.0"
+
+      - name: Install all packages
+        run: npm install
+
+      - name: LambdaTest - run "${{ github.event.inputs.test-type }}" tests, on "${{ github.event.inputs.environment }}" env, on "${{ github.event.inputs.device }}" device
+        run: |
+          export LAMBDATEST_USER=${{ secrets.LAMBDATEST_USER }}
+          export LAMBDATEST_KEY=${{ secrets.LAMBDATEST_KEY }}
+          export TEST_TYPE=${{ github.event.inputs.test-type }}
+          npx wdio configs/wdio.lt.${{ github.event.inputs.device }}.${{ github.event.inputs.environment }}.conf.js
