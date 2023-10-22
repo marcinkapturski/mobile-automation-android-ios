@@ -1,6 +1,6 @@
-# Mobile Automation for navtive apps (Android/iOS)
+# Native App Automation Project
 
-folder and files structure for: mobile-automation-android-ios
+folder and files structure for: appium-native-app-automation
 │--- features/ ### [ Gherking Feature files with tests ]
 |─-- step-definitions_android/ ### [ POM used by Feature files on Android platform ]
 ├─-- step-definitions_ios/ ### [ POM used by Feature files on iOS platform ]

@@ -1,0 +1,38 @@
+name: Store Alerting Mobile Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: "Environment: dev / staging"
+        required: true
+        options:
+          - dev
+          # - staging
+        default: "dev"
+      device:
+        type: choice
+        description: "Device: Samsung S20 / iPhone 14 Pro"
+        required: true
+        options:
+          - android
+          # - ios
+        default: "android"
+      test-type:
+        type: choice
+        description: "Test type to run @smoke / @regression"
+        required: true
+        options:
+          - regression
+          # - smoke
+        default: "regression"
+
+jobs:
+  run-specs:
+    name: Run
+    if: always()
+    uses: "./.github/workflows/appium-run-tests.yml"
+    secrets:
+      LAMBDATEST_USER: ${{ secrets.LAMBDATEST_USER }}
+      LAMBDATEST_KEY: ${{ secrets.LAMBDATEST_KEY }}
