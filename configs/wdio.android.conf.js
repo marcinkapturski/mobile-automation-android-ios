@@ -9,7 +9,7 @@ config.capabilities = [
     "appium:automationName": "UIAutomator2",
     "appium:appPackage": "com.wdiodemoapp",
     "appium:appActivity": "com.wdiodemoapp.SplashActivity",
-    "appium:app": join(process.cwd(), "./app/Android-NativeDemoApp-0.4.0.apk"),
+    "appium:app": join(process.cwd(), "./apps/Android-NativeDemoApp-0.4.0.apk"),
   },
 ];
 config.connectionRetryTimeout = 90000;
