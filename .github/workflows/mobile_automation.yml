@@ -17,7 +17,7 @@ on:
         required: true
         options:
           - android
-          # - ios
+          - ios
         default: "android"
       test-type:
         type: choice
