@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const { config } = require("./wdio.shared.conf");
 
-config.key = process.env.LAMBDATEST_USER;
+config.user = process.env.LAMBDATEST_USER;
 config.key = process.env.LAMBDATEST_KEY;
 
 config.capabilities = [
