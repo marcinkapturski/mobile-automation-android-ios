@@ -13,7 +13,7 @@ config.capabilities = [
   },
 ];
 config.connectionRetryTimeout = 90000;
-config.connectionRetryCount = 0;
+config.connectionRetryCount = 90000;
 config.waitforTimeout = 90000;
 config.timeout = 90000;
 config.specs = [["../features/**"]];

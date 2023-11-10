@@ -5,6 +5,8 @@
   "scripts": {
     "lt:android": "wdio configs/wdio.lt.android.dev.conf.js",
     "android": "wdio configs/wdio.android.conf.js",
+    "lt:ios": "wdio configs/wdio.lt.ios.dev.conf.js",
+    "ios": "wdio configs/wdio.ios.conf.js",
     "appium": "appium --allow-insecure chromedriver_autodownload",
     "pretty-quick": "pretty-quick"
   },
