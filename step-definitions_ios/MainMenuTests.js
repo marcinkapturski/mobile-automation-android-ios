@@ -6,8 +6,8 @@ import {
 } from "../helpers/waitForContext";
 import { Navigation } from "./pageobjects/component/NavigationComponent";
 
-Given("I launch the app", async () => {
-  console.log("---// CHECK: launch the app");
+Given("I am on the Home screen", async () => {
+  console.log("---// CHECK: getting native context");
   const nativeContext = await waitForNativeContext(driver);
   // await browser.pause(3000);
 });
