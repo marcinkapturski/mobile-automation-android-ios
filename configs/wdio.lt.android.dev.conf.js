@@ -2,12 +2,12 @@ require("dotenv").config();
 
 const { config } = require("./wdio.shared.conf");
 
-config.user = process.env.LAMBDATEST_USER;
+config.key = process.env.LAMBDATEST_USER;
 config.key = process.env.LAMBDATEST_KEY;
 
 config.capabilities = [
   {
-    build: "Sample Build Name",
+    build: "Sample Build Android",
     platformName: "android",
     deviceName: "Galaxy S20",
     isRealMobile: true,

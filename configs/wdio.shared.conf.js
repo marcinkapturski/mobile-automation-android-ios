@@ -1,5 +1,5 @@
 const config = {
-  logLevel: "info", // info, error
+  logLevel: "error", // info, error
   bail: 0,
   framework: "cucumber",
   reporters: ["spec"],
